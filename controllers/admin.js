@@ -130,6 +130,7 @@ exports.deleteProducts = (req, res, next) => {
     .findById(deletedId)
     .then((prod) => {
       if (!prod) return next(new Error("Product not found"));
+      console.log("click");
       fileDelete.deleteFile(prod.imageUrl);
       return Product.deleteOne({ _id: deletedId, userId: req.user._id });
     })

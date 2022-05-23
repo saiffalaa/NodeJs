@@ -182,7 +182,7 @@ exports.getCheckout = (req, res, nex) => {
     });
 };
 
-exports.postOrder = (req, res, next) => {
+exports.getCheckoutSuccess = (req, res, next) => {
   req.user
     .populate("cart.items.productId")
     // .execPopulate()
